@@ -44,6 +44,14 @@ export const links = [
 ] as const;
 
 export const experiencesData = [
+    {
+    company: "Ocado Retail - Hatfield, UK",
+    title: "Full Stack Developer",
+    description:
+      "Devloped and maintained enterpise applications for the world's largest online only supermarket. Primarily using Angular, Nest.js & Postgres",
+    imgURL: "/ocado_logo.png",
+    date: "May 2026 - Present",
+  },
   {
     company: "Chip Financial - London, UK",
     title: "Operations Developer",
@@ -67,14 +75,6 @@ export const experiencesData = [
       "Working with a variety of clients to develop websites and applications to meet their specific requirements.",
     imgURL: "/beachshore.jpg",
     date: "Oct 2023 - Jan 2024",
-  },
-  {
-    company: "University of Edinburgh & HyperionDev",
-    title: "Student",
-    description:
-      "Full stack Web Development Bootcamp. Throughout this course I learnt the fundamentals of Web Development and learnt coding in Javascript, HTML, CSS and learnt frameworks such as React and Next.",
-    imgURL: "/Hyperiondev-logo.jpg",
-    date: "Mar 2023 - Sept 2023",
   },
   {
     company: "Tevva - Essex, UK",
@@ -115,13 +115,6 @@ export const experiencesData = [
       "An introduction into automotive procurement and supply chain management.",
     imgURL: "/jaguar.jpg",
     date: "Sept 2015 - Sept 2017",
-  },
-  {
-    company: "University of Leicester",
-    title: "Student",
-    description: "I studied Mechanical Engineering with a focus on automotive.",
-    imgURL: "/University_of_Leicester_Logo_Shield.png",
-    date: "Sept 2011 - Jun 2015",
   },
 ] as const;
 
