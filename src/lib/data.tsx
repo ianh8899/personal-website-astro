@@ -142,7 +142,7 @@ export const projectsData: {
     ],
     projectLink: "http://soupabase.com/",
     githubLink: "https://github.com/ianh8899/soupabase",
-    imageUrl: "/soupabase.webp",
+    imageUrl: "/soupabase.png",
     exampleUsername: "",
     examplePassword: "",
     icons: (
