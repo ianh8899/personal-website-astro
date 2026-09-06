@@ -119,7 +119,7 @@ export const ui = {
         ],
 
         "project.1.description":
-            "A proof of concept Ai application based on Clauda.ai utilising a full stack of technologies to deliver a modern ai saas application.",
+            "A proof of concept Ai application based on Clauda.ai utilising a full stack of technologies to deliver a modern AI SaaS application.",
         "project.1.features": [
             "Frontend: The application's client is built in React, TypeScript brings a layer of type safety, ensuring a robust application with fewer runtime errors.",
             "Backend: Hono, running within the Node.js environment, managing server-side operations, routing, and data handling.",
