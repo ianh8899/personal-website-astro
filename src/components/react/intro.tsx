@@ -4,9 +4,11 @@ import { BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "../../lib/hooks";
+import { useLanguage } from "../../context/language-context";
 
 export default function Intro() {
-  const { ref } = useSectionInView("Home", 0.5);
+  const { ref } = useSectionInView("Home");
+  const { t } = useLanguage();
 
   return (
     <section
@@ -40,10 +42,11 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, my name is Ian.</span> I'm a{" "}
-        <span className="font-bold">Web developer!</span>{" "}
-        <span className="font-bold"></span>I enjoy building{" "}
-        <span className="italic">sites & apps</span>.
+        <span className="font-bold">{t("intro.greeting")}</span> I'm a{" "}
+        <span className="font-bold">{t("intro.role")}</span>{" "}
+        <span className="font-bold"></span>
+        {t("intro.enjoyBuilding")}{" "}
+        <span className="italic">{t("intro.sitesAndApps")}</span>
       </motion.h1>
 
       <motion.div
@@ -60,7 +63,7 @@ export default function Intro() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Download CV{" "}
+          {t("intro.downloadCV")}{" "}
           <HiDownload className="opacity-70 group-hover:translate-y-1 transition" />
         </a>
 
@@ -68,7 +71,7 @@ export default function Intro() {
           className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
           href="https://www.linkedin.com/in/ianhitchman/"
           target="_blank"
-          aria-label="Link to LinkedIn"
+          aria-label={t("intro.linkedinLabel")}
         >
           <BsLinkedin />
         </a>
@@ -77,7 +80,7 @@ export default function Intro() {
           className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
           href="https://github.com/ianh8899"
           target="_blank"
-          aria-label="Link to Github"
+          aria-label={t("intro.githubLabel")}
         >
           <FaGithubSquare />
         </a>

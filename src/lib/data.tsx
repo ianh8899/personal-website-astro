@@ -44,6 +44,9 @@ export const links = [
 ] as const;
 
 export const experiencesData = [
+    // NOTE: `description` here is unused for rendering — the translated
+    // copy is looked up from src/i18n/ui.ts via `experience.<index>.description`.
+    // Kept here only to preserve the array shape/typing.
     {
     company: "Ocado Retail - Hatfield, UK",
     title: "Full Stack Developer",
@@ -118,6 +121,10 @@ export const experiencesData = [
   },
 ] as const;
 
+// NOTE: `description` and `features` are unused for rendering — the
+// translated copy is looked up from src/i18n/ui.ts via
+// `project.<index>.description` / `project.<index>.features`.
+// Kept here only to preserve the array shape/typing.
 export const projectsData: {
   index: number;
   title: string;

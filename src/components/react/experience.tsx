@@ -8,14 +8,17 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "../../lib/data";
 import { useSectionInView } from "../../lib/hooks";
 import { useTheme } from "../../context/theme-context";
+import { useLanguage } from "../../context/language-context";
+import type { TranslationKey } from "../../i18n/utils";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
+  const { t } = useLanguage();
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>My experience</SectionHeading>
+      <SectionHeading>{t("experience.heading")}</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
             <React.Fragment key={index}>
@@ -34,7 +37,7 @@ export default function Experience() {
                                 ? "0.4rem solid #9ca3af"
                                 : "0.4rem solid rgba(255, 255, 255, 0.5)",
                     }}
-                    date={item.date}
+                    date={t(`experience.${index}.date` as TranslationKey) as string}
                     icon={
                         <div style={{
                             backgroundImage: `url(${item.imgURL})`,
@@ -51,7 +54,7 @@ export default function Experience() {
                     <h3 className="font-semibold capitalize">{item.company}</h3>
                     <p className="font-normal !mt-0">{item.title}</p>
                     <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                        {item.description}
+                        {t(`experience.${index}.description` as TranslationKey)}
                     </p>
                 </VerticalTimelineElement>
             </React.Fragment>

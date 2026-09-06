@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { languages, getLangFromUrl, getLocalizedPath } from "../i18n/utils";
 
 interface Props {
 	title?: string;
@@ -10,10 +11,16 @@ const {
 	title = "Ian Hitchman | Personal Website",
 	description = "Ian is a full-stack web developer based in Arnhem, NL.",
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const canonicalURL = new URL(
+	Astro.url.pathname,
+	Astro.site ?? Astro.url.origin,
+);
 ---
 
 <!doctype html>
-<html lang="en" class="!scroll-smooth">
+<html lang={lang} class="!scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -22,6 +29,32 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		{
+			Object.keys(languages).map((locale) => (
+				<link
+					rel="alternate"
+					hreflang={locale}
+					href={
+						new URL(
+							getLocalizedPath(
+								Astro.url.pathname,
+								locale as keyof typeof languages,
+							),
+							Astro.site ?? Astro.url.origin,
+						)
+					}
+				/>
+			))
+		}
+		<link
+			rel="alternate"
+			hreflang="x-default"
+			href={new URL(
+				getLocalizedPath(Astro.url.pathname, "en"),
+				Astro.site ?? Astro.url.origin,
+			)}
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -30,7 +63,10 @@ const {
 		/>
 	</head>
 	<body
-		class="font-[Inter] bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90"
+		class:list={[
+			"font-[Inter] bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90",
+			lang === "nl" ? "pt-48 sm:pt-36" : "pt-40 sm:pt-36",
+		]}
 	>
 		<div
 			class="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"

@@ -2,13 +2,13 @@ import { useRef, useState } from "react";
 import type { projectsData } from "../../lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaCircleInfo, FaGithub, FaRegCopy } from "react-icons/fa6";
+import { useLanguage } from "../../context/language-context";
+import type { TranslationKey } from "../../i18n/utils";
 
 type ProjectProps = (typeof projectsData)[number];
 
 export default function Project({
   title,
-  features,
-  description,
   projectLink,
   imageUrl,
   icons,
@@ -27,6 +27,9 @@ export default function Project({
   const [showCredentials, setShowCredentials] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [copied, setCopied] = useState("");
+  const { t } = useLanguage();
+  const description = t(`project.${index}.description` as TranslationKey) as string;
+  const features = t(`project.${index}.features` as TranslationKey) as unknown as readonly string[];
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
     setCopied(type);
@@ -48,10 +51,10 @@ export default function Project({
         scale: scaleProgess,
         opacity: opacityProgess,
       }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+      className="group mb-3 sm:mb-8 last:mb-0 -mx-4 sm:mx-0"
     >
       <section className="flex flex-col justify-center py-10">
-        <div className="mx-auto px-4" style={{ maxWidth: "90rem" }}>
+        <div className="mx-auto px-1 sm:px-4" style={{ maxWidth: "90rem" }}>
           <div className="p-12 bg-white shadow-2xl rounded-lg dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 transition">
             <div className="grid grid-cols-1 lg:grid-cols-7 gap-8 my-20 items-center">
               {/* Image on the left for odd indices */}
@@ -62,7 +65,7 @@ export default function Project({
                       href={githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Github Link to Project"
+                      aria-label={t("project.githubAriaLabel")}
                       className="absolute translate-x-1/2 top-24 lg:top-40 lg:left-40 sm:top-24 sm:left-1/2"
                     >
                       <FaGithub className="scale-[3] hover:scale-[4] hover:duration-300" />
@@ -72,7 +75,7 @@ export default function Project({
                     href={projectLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Link to Hosted Project"
+                    aria-label={t("project.hostedAriaLabel")}
                   >
                     <motion.div
                       className="overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300 rounded-lg"
@@ -102,13 +105,15 @@ export default function Project({
                       />
                       {showTooltip && (
                         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 -translate-y-6 bg-black text-white p-2 rounded-md w-72">
-                          Click to show credentials for test account
+                          {t("project.clickToShowCredentials")}
                         </div>
                       )}
                       {showCredentials && (
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 translate-y-4 bg-black text-white p-4 rounded shadow-md mt-4 w-72">
                           <div className="flex items-center justify-between">
-                            <p>Username: {exampleUsername}</p>
+                            <p>
+                              {t("project.usernameLabel")} {exampleUsername}
+                            </p>
                             <FaRegCopy
                               onClick={() =>
                                 copyToClipboard(exampleUsername, "username")
@@ -121,7 +126,9 @@ export default function Project({
                             />
                           </div>
                           <div className="flex items-center mt-2 justify-between">
-                            <p>Password: {examplePassword}</p>
+                            <p>
+                              {t("project.passwordLabel")} {examplePassword}
+                            </p>
                             <FaRegCopy
                               onClick={() =>
                                 copyToClipboard(examplePassword, "password")
@@ -146,14 +153,14 @@ export default function Project({
                   isOdd ? "lg:col-span-4 lg:col-start-4" : "lg:col-span-4"
                 }`}
               >
-                <h4 className="text-3xl font-medium capitalize mb-8 text-center dark:text-white">
+                <h4 className="text-3xl font-medium capitalize mb-8 text-center dark:text-white pt-14 lg:pt-0">
                   {title}
                 </h4>
                 <p className="mb-6 text-lg leading-relaxed dark:text-white/70 flex items-center">
                   {description}
                 </p>
                 <h5 className="mb-4 font-semibold text-lg dark:text-white">
-                  Key Technical Features:
+                  {t("project.keyFeaturesHeading")}
                 </h5>
                 <ul className="mb-6 list-disc pl-5 space-y-2 text-lg dark:text-white/70">
                   {features.map((feature, index) => (

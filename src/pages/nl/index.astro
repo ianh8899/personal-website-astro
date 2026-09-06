@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import App from "../../components/react/App";
+
+// Update these once the Dutch copy is finalized (used for <title>/<meta description>).
+const title = "Ian Hitchman | Persoonlijke Website";
+const description = "Ian is een fullstack webontwikkelaar gevestigd in Arnhem, NL.";
+---
+
+<Layout title={title} description={description}>
+	<App client:load lang="nl" pathname={Astro.url.pathname} />
+</Layout>

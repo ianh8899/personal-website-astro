@@ -2,9 +2,11 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "../../lib/hooks";
+import { useLanguage } from "../../context/language-context";
 
 export default function About() {
   const { ref } = useSectionInView("About");
+  const { t } = useLanguage();
 
   return (
     <motion.section
@@ -15,28 +17,36 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <SectionHeading>About me</SectionHeading>
+      <SectionHeading>{t("about.heading")}</SectionHeading>
       <p className="mb-3">
-        I spent 8 years working in procurement within the automotive industry
-        after graduating in{" "}
-        <span className="font-medium">Mechanical Engineering</span>, managing
-        global supply chains and working closely with stakeholders to deliver
-        complex projects. I’ve since transitioned into software engineering,
-        where I now have a{" "}
-        <span className="font-medium">proven track record</span> of building
-        scalable applications using{" "}
-        <span className="font-medium">modern web technologies</span>. I bring
-        skills in communication, problem-solving and collaboration into my
-        professional work, with a strong focus on{" "}
-        <span className="italic">maintainability</span>, performance and user
-        experience.
+        {t("about.paragraph1Part1")}{" "}
+        <span className="font-medium">
+          {t("about.paragraph1MechanicalEngineering")}
+        </span>
+        {t("about.paragraph1Part2")}{" "}
+        <span className="font-medium">
+          {t("about.paragraph1ProvenTrackRecord")}
+        </span>{" "}
+        {t("about.paragraph1Part3")}{" "}
+        <span className="font-medium">
+          {t("about.paragraph1ModernWebTechnologies")}
+        </span>
+        {t("about.paragraph1Part4")}{" "}
+        <span className="italic">{t("about.paragraph1Maintainability")}</span>
+        , {t("about.paragraph1Part5")}
       </p>
       <p>
-        When I'm not coding, I'm often{" "}
-        <span className="italic">cooking and traveling</span> with my partner. I
-        thoroughly enjoy{" "}
-        <span className="font-medium">learning new things</span>, currently I'm
-        learning <span className="font-medium">dutch</span>.
+        {t("about.paragraph2Part1")}{" "}
+        <span className="italic">
+          {t("about.paragraph2CookingAndTraveling")}
+        </span>{" "}
+        {t("about.paragraph2Part2")}{" "}
+        <span className="font-medium">
+          {t("about.paragraph2LearningNewThings")}
+        </span>
+        {t("about.paragraph2Part3")}{" "}
+        <span className="font-medium">{t("about.paragraph2Dutch")}</span>
+        {t("about.paragraph2Part4")}
       </p>
     </motion.section>
   );
