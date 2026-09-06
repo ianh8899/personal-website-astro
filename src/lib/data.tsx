@@ -51,7 +51,7 @@ export const experiencesData = [
     company: "Ocado Retail - Hatfield, UK",
     title: "Full Stack Developer",
     description:
-      "Devloped and maintained enterpise applications for the world's largest online only supermarket. Primarily using Angular, Nest.js & Postgres",
+      "Developed and maintained enterpise applications for the world's largest online only supermarket. Primarily using Angular, Nest.js & Postgres",
     imgURL: "/ocado_logo.png",
     date: "May 2026 - Present",
   },
@@ -141,7 +141,7 @@ export const projectsData: {
     index: 0,
     title: "Soupabase REST API",
     description:
-      "Soupabase is a public free to use and fast REST API that returns all data types for use in teaching, testing and prototyping for front end applications.",
+      "Soupabase is a public free to use and fast REST API that returns all data types for use in teaching, testing and prototyping for front-end applications.",
     features: [
       "Frontend: Served from the backend with HTML responses making use of HTMX and tailwind",
       "Backend: Hono as the server and Supabase for the database",
@@ -165,12 +165,12 @@ export const projectsData: {
     index: 1,
     title: "Flaude AI App",
     description:
-      "A proof of concept Ai application based on Clauda.ai utilising a full stack of technologies to deliver a modern ai saas application.",
+      "A proof of concept AI application based on Clauda.ai utilising a full stack of technologies to deliver a modern AI saas application.",
     features: [
       "Frontend: The application's client is built in React, TypeScript brings a layer of type safety, ensuring a robust application with fewer runtime errors.",
       "Backend: Hono, running within the Node.js environment, managing server-side operations, routing, and data handling.",
       "Stripe: To take customer payments for the AI service.",
-      "Ai Model: Tinyllama model running with the Ollama API for fast and efficient responses.",
+      "AI Model: Tinyllama model running with the Ollama API for fast and efficient responses.",
     ],
     projectLink: "https://flaude-ai.ianhitchman.co.uk/",
     githubLink: "https://github.com/ianh8899/flaude-ai",

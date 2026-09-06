@@ -53,7 +53,7 @@ export const ui = {
         "about.paragraph2Part2": "with my partner. I thoroughly enjoy",
         "about.paragraph2LearningNewThings": "learning new things",
         "about.paragraph2Part3": ", currently I'm learning",
-        "about.paragraph2Dutch": "dutch",
+        "about.paragraph2Dutch": "Dutch",
         "about.paragraph2Part4": ".",
 
         // Projects section
