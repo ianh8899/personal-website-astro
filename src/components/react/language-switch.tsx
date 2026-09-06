@@ -7,12 +7,19 @@ const flags: Record<Lang, string> = {
   nl: "🇳🇱",
 };
 
+// TEMPORARY: Dutch is disabled while translations are being reworked.
+// Remove "nl" from this array to re-enable the language switch option
+// (and revert the redirect in src/pages/nl/index.astro).
+const DISABLED_LANGS: string[] = ["nl"];
+
 export default function LanguageSwitch() {
   const { lang, pathname } = useLanguage();
 
   return (
     <>
-      {Object.entries(languages).map(([code]) => {
+      {Object.entries(languages)
+        .filter(([code]) => !DISABLED_LANGS.includes(code))
+        .map(([code]) => {
         const isActive = code === lang;
         const href = getLocalizedPath(pathname, code as Lang);
 

@@ -61,7 +61,7 @@ export const experiencesData = [
     description:
       "Created internal applications to improve operational efficiency and ensure compliance in financial services.",
     imgURL: "/chip_logo.jpg",
-    date: "August 2025 - September 2026",
+    date: "August 2025 - September 2025",
   },
   {
     company: "Henry Schein One - Remote, UK",

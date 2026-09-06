@@ -267,7 +267,7 @@ export const ui = {
         ],
 
         "project.2.description":
-            "Dit project is een socialemediaplatform gebouwd met moderne tools en technologieën. Gebruikers kunnen hun gedachten delen, deelnemen aan discussies en in contact komen met de digitale community.",
+            "Dit project is een sociale media-platform gebouwd met moderne tools en technologieën. Gebruikers kunnen hun gedachten delen, deelnemen aan discussies en in contact komen met de digitale community.",
         "project.2.features": [
             "Frontend: De frontend van de applicatie is gemaakt met Next.js, geoptimaliseerd voor snellere laadtijden en verbeterde SEO. TypeScript biedt typeveiligheid voor een robuuste applicatie.",
             "Backend: Express.js, draaiend in de Node.js-omgeving, beheert serverzijde-operaties, routing en gegevensverwerking.",
