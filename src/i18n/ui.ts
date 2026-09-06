@@ -111,7 +111,7 @@ export const ui = {
 
         // Project descriptions & features (indexed to match projectsData in lib/data.tsx)
         "project.0.description":
-            "Soupabase is a public free to use and fast REST API that returns all data types for use in teaching, testing and prototyping for front end applications.",
+            "Soupabase is a public free to use and fast REST API that returns all data types for use in teaching, testing and prototyping for front-end applications.",
         "project.0.features": [
             "Frontend: Served from the backend with HTML responses making use of HTMX and tailwind",
             "Backend: Hono as the server and Supabase for the database",

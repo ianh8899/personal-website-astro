@@ -73,7 +73,7 @@ export const experiencesData = [
   },
   {
     company: "Beachshore Design - Watford, UK",
-    title: "Web Developer, Front end.",
+    title: "Web Developer, Frontend.",
     description:
       "Working with a variety of clients to develop websites and applications to meet their specific requirements.",
     imgURL: "/beachshore.jpg",
@@ -141,7 +141,7 @@ export const projectsData: {
     index: 0,
     title: "Soupabase REST API",
     description:
-      "Soupabase is a public free to use and fast REST API that returns all data types for use in teaching, testing and prototyping for front-end applications.",
+      "Soupabase is a public free to use and fast REST API that returns all data types for use in teaching, testing and prototyping for frontend applications.",
     features: [
       "Frontend: Served from the backend with HTML responses making use of HTMX and tailwind",
       "Backend: Hono as the server and Supabase for the database",
@@ -241,11 +241,11 @@ export const projectsData: {
     index: 4,
     title: "HyperionDev Portfolio",
     description:
-      "A comprehensive learning journey through Full Stack Web Development, covering front-end and back-end technologies, security protocols, and API integration.",
+      "A comprehensive learning journey through Full Stack Web Development, covering frontend and backend technologies, security protocols, and API integration.",
     features: [
       "Web Fundamentals: JavaScript, CSS, HTML.",
-      "Front-End Mastery: CSS, React, Bootstrap.",
-      "Back-End Proficiency: Express and MongoDB.",
+      "FrontEnd Mastery: CSS, React, Bootstrap.",
+      "BackEnd Proficiency: Express and MongoDB.",
       "Security Protocols: User validation and JWT.",
       "API Integration and Frameworks: React, Next.js.",
     ],
