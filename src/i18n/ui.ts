@@ -100,7 +100,7 @@ export const ui = {
 
         // Experience dates (indexed to match experiencesData in lib/data.tsx)
         "experience.0.date": "May 2026 - Present",
-        "experience.1.date": "Aug 2025 - Sep 2026",
+        "experience.1.date": "Aug 2025 - Sept 2025",
         "experience.2.date": "Jun 2024 - Jun 2025",
         "experience.3.date": "Oct 2023 - Jan 2024",
         "experience.4.date": "Jul 2022 - Mar 2023",
@@ -111,7 +111,7 @@ export const ui = {
 
         // Project descriptions & features (indexed to match projectsData in lib/data.tsx)
         "project.0.description":
-            "Soupabase is a public free to use and fast REST API that returns all data types for use in teaching, testing and prototyping for front-end applications.",
+            "Soupabase is a public free to use and fast REST API that returns all data types for use in teaching, testing and prototyping for frontend applications.",
         "project.0.features": [
             "Frontend: Served from the backend with HTML responses making use of HTMX and tailwind",
             "Backend: Hono as the server and Supabase for the database",
@@ -145,11 +145,11 @@ export const ui = {
         ],
 
         "project.4.description":
-            "A comprehensive learning journey through Full Stack Web Development, covering front-end and back-end technologies, security protocols, and API integration.",
+            "A comprehensive learning journey through Full Stack Web Development, covering frontend and backend technologies, security protocols, and API integration.",
         "project.4.features": [
             "Web Fundamentals: JavaScript, CSS, HTML.",
-            "Front-End Mastery: CSS, React, Bootstrap.",
-            "Back-End Proficiency: Express and MongoDB.",
+            "FrontEnd Mastery: CSS, React, Bootstrap.",
+            "BackEnd Proficiency: Express and MongoDB.",
             "Security Protocols: User validation and JWT.",
             "API Integration and Frameworks: React, Next.js.",
         ],
@@ -239,7 +239,7 @@ export const ui = {
 
         // Experience dates (indexed to match experiencesData in lib/data.tsx)
         "experience.0.date": "Mei 2026 - Heden",
-        "experience.1.date": "Aug 2025 - Sep 2026",
+        "experience.1.date": "Aug 2025 - Sept 2025",
         "experience.2.date": "Jun 2024 - Jun 2025",
         "experience.3.date": "Okt 2023 - Jan 2024",
         "experience.4.date": "Jul 2022 - Mrt 2023",
