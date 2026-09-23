@@ -20,28 +20,7 @@ import { SkillIconsHtmxLight } from "../components/react/svg/htmx";
 import { LogosHono } from "../components/react/svg/hono";
 
 
-export const links = [
-  {
-    name: "Home",
-    hash: "#home",
-  },
-  {
-    name: "About",
-    hash: "#about",
-  },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
-  },
-] as const;
+export { links } from "./links";
 
 export const experiencesData = [
     // NOTE: `description` here is unused for rendering — the translated

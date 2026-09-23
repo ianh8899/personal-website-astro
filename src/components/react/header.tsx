@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { links } from "../../lib/data";
+import { links } from "../../lib/links";
 import clsx from "clsx";
 import { useActiveSectionContext } from "../../context/active-section-context";
 import { useLanguage } from "../../context/language-context";
@@ -36,9 +36,18 @@ export default function Header() {
                   }
                 )}
                 href={link.hash}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   setActiveSection(link.name);
                   setTimeOfLastClick(Date.now());
+
+                  const target = document.querySelector(link.hash);
+                  if (target) {
+                    // Cancel any active smooth scroll animation in WebKit immediately
+                    window.scrollTo({ top: window.scrollY, behavior: "instant" });
+                    target.scrollIntoView({ behavior: "smooth" });
+                    window.history.pushState(null, "", link.hash);
+                  }
                 }}
               >
                 {t(`nav.${link.hash.slice(1)}` as TranslationKey)}

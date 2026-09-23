@@ -91,6 +91,8 @@ export default function Project({
                         alt={title}
                         width={600}
                         height={80}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full object-contain max-h-80"
                       />
                     </motion.div>
@@ -204,6 +206,8 @@ export default function Project({
                         alt={title}
                         width={600}
                         height={80}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full object-contain max-h-80"
                       />
                     </motion.div>

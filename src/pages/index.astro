@@ -1,8 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import App from "../components/react/App";
+import NavIsland from "../components/react/NavIsland";
+import MainContentIsland from "../components/react/MainContentIsland";
+import ThemeSwitchIsland from "../components/react/ThemeSwitchIsland";
 ---
 
 <Layout>
-	<App client:load lang="en" pathname={Astro.url.pathname} />
+	<NavIsland client:load lang="en" pathname={Astro.url.pathname} />
+	<MainContentIsland client:visible lang="en" pathname={Astro.url.pathname} />
+	<ThemeSwitchIsland client:idle />
 </Layout>

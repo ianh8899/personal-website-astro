@@ -8,8 +8,8 @@ const flags: Record<Lang, string> = {
 };
 
 // TEMPORARY: Dutch is disabled while translations are being reworked.
-// Remove "nl" from this array to re-enable the language switch option
-// (and revert the redirect in src/pages/nl/index.astro).
+// Add "nl" to this array to disable the language switch option again
+// (and reinstate the redirect in src/pages/nl/index.astro).
 const DISABLED_LANGS: string[] = ["nl"];
 
 export default function LanguageSwitch() {

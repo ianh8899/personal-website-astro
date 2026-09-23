@@ -1,4 +1,4 @@
-import { useActiveSectionContext } from "../context/active-section-context";
+import { activeSectionStore, timeOfLastClickStore } from "../context/active-section-context";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import type { SectionName } from "./types";
@@ -13,13 +13,12 @@ export function useSectionInView(sectionName: SectionName) {
     const { ref, inView } = useInView({
         rootMargin: "-20% 0px -70% 0px",
     });
-    const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
     useEffect(() => {
-        if (inView && Date.now() - timeOfLastClick > 1000) {
-            setActiveSection(sectionName);
+        if (inView && Date.now() - timeOfLastClickStore.get() > 1750) {
+            activeSectionStore.set(sectionName);
         }
-    }, [inView, setActiveSection, timeOfLastClick, sectionName]);
+    }, [inView, sectionName]);
 
     return {
         ref,

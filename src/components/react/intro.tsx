@@ -31,6 +31,8 @@ export default function Intro() {
               alt="Ian Hitchman"
               width={192}
               height={192}
+              fetchPriority="high"
+              decoding="async"
               className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>

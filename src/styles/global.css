@@ -4,10 +4,14 @@
 
 html {
   --line-color: #e5e7eb;
+  --experience-bg: #f3f4f6;
+  --experience-arrow: #9ca3af;
 }
 
 html.dark {
   --line-color: rgba(255, 255, 255, 0.2);
+  --experience-bg: rgba(255, 255, 255, 0.05);
+  --experience-arrow: rgba(255, 255, 255, 0.5);
 }
 
 .borderBlack {
