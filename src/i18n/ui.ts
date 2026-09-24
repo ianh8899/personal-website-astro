@@ -80,7 +80,7 @@ export const ui = {
 
         // Experience descriptions (indexed to match experiencesData in lib/data.tsx)
         "experience.0.description":
-            "Devloped and maintained enterpise applications for the world's largest online only supermarket. Primarily using Angular, Nest.js & Postgres",
+            "Developed and maintained enterprise applications for the world's largest online only supermarket. Primarily using Angular, Nest.js & Postgres",
         "experience.1.description":
             "Created internal applications to improve operational efficiency and ensure compliance in financial services.",
         "experience.2.description":
@@ -88,9 +88,9 @@ export const ui = {
         "experience.3.description":
             "Working with a variety of clients to develop websites and applications to meet their specific requirements.",
         "experience.4.description":
-            "The commercial lead for electrified powertrian, ensuring the business has first to market technology leading in performance, cost and sustainability.",
+            "The commercial lead for electrified powertrain, ensuring the business has first to market technology leading in performance, cost and sustainability.",
         "experience.5.description":
-            "The local lead buyer for electrical hardware with targets to improve on contract postiion and new product development.",
+            "The local lead buyer for electrical hardware with targets to improve on contract position and new product development.",
         "experience.6.description":
             "Responsible for the development and implementation of the global sourcing strategies across the category.",
         "experience.7.description":
@@ -119,7 +119,7 @@ export const ui = {
         ],
 
         "project.1.description":
-            "A proof of concept Ai application based on Clauda.ai utilising a full stack of technologies to deliver a modern AI SaaS application.",
+            "A proof of concept AI application based on Claude.ai utilising a full stack of technologies to deliver a modern AI SaaS application.",
         "project.1.features": [
             "Frontend: The application's client is built in React, TypeScript brings a layer of type safety, ensuring a robust application with fewer runtime errors.",
             "Backend: Hono, running within the Node.js environment, managing server-side operations, routing, and data handling.",

@@ -30,7 +30,7 @@ export const experiencesData = [
     company: "Ocado Retail - Hatfield, UK",
     title: "Full Stack Developer",
     description:
-      "Developed and maintained enterpise applications for the world's largest online only supermarket. Primarily using Angular, Nest.js & Postgres",
+      "Developed and maintained enterprise applications for the world's largest online only supermarket. Primarily using Angular, Nest.js & Postgres",
     imgURL: "/ocado_logo.png",
     date: "May 2026 - Present",
   },
@@ -62,7 +62,7 @@ export const experiencesData = [
     company: "Tevva - Essex, UK",
     title: "Senior Buyer",
     description:
-      "The commercial lead for electrified powertrian, ensuring the business has first to market technology leading in performance, cost and sustainability.",
+      "The commercial lead for electrified powertrain, ensuring the business has first to market technology leading in performance, cost and sustainability.",
     imgURL: "/tevva.png",
     date: "Jul 2022 - Mar 2023",
   },
@@ -70,7 +70,7 @@ export const experiencesData = [
     company: "Alstom - Derby, UK",
     title: "Commodity buyer",
     description:
-      "The local lead buyer for electrical hardware with targets to improve on contract postiion and new product development.",
+      "The local lead buyer for electrical hardware with targets to improve on contract position and new product development.",
     imgURL: "/Alstom_logo.svg",
     date: "Feb 2021 - Jul 2022",
   },
@@ -144,7 +144,7 @@ export const projectsData: {
     index: 1,
     title: "Flaude AI App",
     description:
-      "A proof of concept AI application based on Clauda.ai utilising a full stack of technologies to deliver a modern AI SaaS application.",
+      "A proof of concept AI application based on Claude.ai utilising a full stack of technologies to deliver a modern AI SaaS application.",
     features: [
       "Frontend: The application's client is built in React, TypeScript brings a layer of type safety, ensuring a robust application with fewer runtime errors.",
       "Backend: Hono, running within the Node.js environment, managing server-side operations, routing, and data handling.",
