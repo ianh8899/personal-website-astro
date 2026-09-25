@@ -14,18 +14,14 @@ export default function Header() {
 
   return (
     <header className="z-[999] relative">
-      <motion.nav
-        className="fixed top-0 left-1/2 -translate-x-1/2 w-full min-h-[4.5rem] flex items-center justify-center flex-wrap rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] py-2 sm:top-6 sm:w-fit sm:max-w-[92vw] sm:min-h-0 sm:h-[3.25rem] sm:rounded-full sm:py-0 dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+      <nav
+        className="anim-drop fixed top-0 left-1/2 -translate-x-1/2 w-full min-h-[4.5rem] flex items-center justify-center flex-wrap rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] webkit:backdrop-blur-none py-2 sm:top-6 sm:w-fit sm:max-w-[92vw] sm:min-h-0 sm:h-[3.25rem] sm:rounded-full sm:py-0 dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
       >
         <ul className="flex h-full max-w-[92vw] flex-wrap items-center justify-center gap-y-1 gap-x-1 px-4 text-[0.9rem] font-medium text-gray-500 sm:max-w-none sm:flex-nowrap sm:gap-5 sm:px-0">
           {links.map((link) => (
-            <motion.li
+            <li
               className="h-full flex items-center justify-center relative"
               key={link.hash}
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
             >
               <a
                 className={clsx(
@@ -64,7 +60,7 @@ export default function Header() {
                   ></motion.span>
                 )}
               </a>
-            </motion.li>
+            </li>
           ))}
 
           <li
@@ -74,7 +70,7 @@ export default function Header() {
 
           <LanguageSwitch />
         </ul>
-      </motion.nav>
+      </nav>
     </header>
   );
 }

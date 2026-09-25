@@ -39,6 +39,24 @@ const canonicalURL = new URL(
 			} else {
 				document.documentElement.classList.remove("dark");
 			}
+
+			// Engine/device classes, set before first paint (see src/lib/env.ts).
+			// - `.webkit-engine`: the WebKit rendering engine — Safari on macOS
+			//   and iOS, and every browser on iOS (they all run WebKit). Used to
+			//   skip WebKit-slow effects (backdrop-filter) and to swap
+			//   scroll-linked JS animations for one-shot ones.
+			// - `.ios`: iOS/iPadOS device, regardless of browser.
+			const ua = navigator.userAgent;
+			const isWebKitEngine = /AppleWebKit/.test(ua) && !/Gecko\//.test(ua); // excludes Firefox
+			const isIOS =
+				/iPad|iPhone|iPod/.test(ua) ||
+				(navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS masquerades as macOS
+			if (isWebKitEngine) {
+				document.documentElement.classList.add("webkit-engine");
+			}
+			if (isIOS) {
+				document.documentElement.classList.add("ios");
+			}
 		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -72,12 +90,8 @@ const canonicalURL = new URL(
 				Astro.site ?? Astro.url.origin,
 			)}
 		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
+		<!-- Inter is self-hosted via @fontsource (see src/styles/global.css):
+		     no render-blocking cross-origin stylesheet, no font round-trip. -->
 	</head>
 	<body
 		class:list={[

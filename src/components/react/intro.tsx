@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
@@ -18,14 +17,7 @@ export default function Intro() {
     >
       <div className="flex items-center justify-center">
         <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "tween",
-              duration: 0.2,
-            }}
-          >
+          <div className="anim-pop">
             <img
               src="/IMG20230816102914.jpg"
               alt="Ian Hitchman"
@@ -35,29 +27,22 @@ export default function Intro() {
               decoding="async"
               className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
+      <h1
+        className="anim-fade-up mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
       >
         <span className="font-bold">{t("intro.greeting")}</span>{" "}
         <span className="font-bold">{t("intro.role")}</span>{" "}
         <span className="font-bold"></span>
         {t("intro.enjoyBuilding")}{" "}
         <span className="italic">{t("intro.sitesAndApps")}</span>
-      </motion.h1>
+      </h1>
 
-      <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
+      <div
+        className="anim-fade-up anim-delay-100 flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
       >
         <a
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 hover:bg-gray-950 active:scale-105 transition"
@@ -86,7 +71,7 @@ export default function Intro() {
         >
           <FaGithubSquare />
         </a>
-      </motion.div>
+      </div>
     </section>
   );
 }

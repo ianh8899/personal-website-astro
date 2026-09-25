@@ -3,6 +3,7 @@ import type { projectsData } from "../../lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaCircleInfo, FaGithub, FaRegCopy } from "react-icons/fa6";
 import { useLanguage } from "../../context/language-context";
+import { isWebKitEngine } from "../../lib/env";
 import type { TranslationKey } from "../../i18n/utils";
 
 type ProjectProps = (typeof projectsData)[number];
@@ -18,6 +19,14 @@ export default function Project({
   examplePassword,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
+  // The scroll-linked scale/opacity effect forces main-thread JS work on
+  // every scroll frame, which is disproportionately expensive on WebKit
+  // (Safari + all iOS browsers). On those engines we swap it for a one-shot
+  // whileInView animation instead. The SSR output is identical either way:
+  // framer bakes scale 0.8 / opacity 0.6 (scroll progress 0) into the HTML,
+  // which matches the `initial` values of the whileInView variant, so there
+  // is no hydration jump. See src/lib/env.ts.
+  const isWebKit = isWebKitEngine();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["0 1", "1.33 1"],
@@ -47,11 +56,19 @@ export default function Project({
   return (
     <motion.div
       ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0 -mx-4 sm:mx-0"
+      {...(isWebKit
+        ? {
+            initial: { opacity: 0.6, scale: 0.8 },
+            whileInView: { opacity: 1, scale: 1 },
+            viewport: { once: true, amount: 0.2 },
+          }
+        : {
+            style: {
+              scale: scaleProgess,
+              opacity: opacityProgess,
+            },
+          })}
+      className="group relative mb-3 sm:mb-8 last:mb-0 -mx-4 sm:mx-0"
     >
       <section className="flex flex-col justify-center py-10">
         <div className="mx-auto px-1 sm:px-4" style={{ maxWidth: "90rem" }}>

@@ -1,4 +1,9 @@
 ---
+// The page is 100% static content, so it is prerendered to a plain HTML file
+// at build time: served from Cloudflare's asset layer with no per-request
+// React SSR on the Worker (lower TTFB, HTML cacheable at the edge).
+export const prerender = true;
+
 import Layout from "../layouts/Layout.astro";
 import NavIsland from "../components/react/NavIsland";
 import MainContentIsland from "../components/react/MainContentIsland";

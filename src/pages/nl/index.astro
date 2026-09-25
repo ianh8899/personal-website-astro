@@ -1,4 +1,9 @@
 ---
+// The page is 100% static content, so it is prerendered to a plain HTML file
+// at build time: served from Cloudflare's asset layer with no per-request
+// React SSR on the Worker (lower TTFB, HTML cacheable at the edge).
+export const prerender = true;
+
 // TEMPORARY: Dutch translations are being reworked and are disabled for now.
 // To re-enable, uncomment the original code below, remove the redirect,
 // and remove the `nl` filter in `src/components/react/language-switch.tsx`.

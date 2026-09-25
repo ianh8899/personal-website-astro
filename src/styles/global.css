@@ -1,6 +1,19 @@
 @import "tailwindcss";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * WebKit-engine targeting.
+ * The `.webkit-engine` class is added by the inline script in Layout.astro
+ * before first paint. On iOS *every* browser runs WebKit, so this variant
+ * means "WebKit rendering engine" (Safari on any platform + all iOS
+ * browsers), not just the Safari app. Used for Safari-specific perf fixes.
+ */
+@custom-variant webkit (&:where(.webkit-engine, .webkit-engine *));
 
 html {
   --line-color: #e5e7eb;
@@ -16,4 +29,69 @@ html.dark {
 
 .borderBlack {
   border: 1px solid rgb(0 0 0 / 0.1);
+}
+
+/* ---- Load-time entrance animations ---------------------------------------
+   These used to be framer-motion `initial`/`animate`, which bakes
+   `opacity: 0` into the SSR HTML — leaving the whole page invisible until
+   React hydrated (the main reason Safari felt slow). CSS animations run
+   from first paint without JS and are GPU-composited in every engine. */
+@keyframes entrance-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes entrance-pop {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes entrance-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-6.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.anim-fade-up {
+  animation: entrance-fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.anim-pop {
+  animation: entrance-pop 0.25s cubic-bezier(0, 0, 0.2, 1) both;
+}
+.anim-drop {
+  animation: entrance-drop 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.anim-delay-100 {
+  animation-delay: 0.1s;
+}
+.anim-delay-125 {
+  animation-delay: 0.125s;
+}
+.anim-delay-175 {
+  animation-delay: 0.175s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up,
+  .anim-pop,
+  .anim-drop {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
