@@ -33,6 +33,8 @@ export const ui = {
         "intro.downloadCV": "Download CV",
         "intro.linkedinLabel": "Link to LinkedIn",
         "intro.githubLabel": "Link to Github",
+        "intro.interviewMe": "Interview me with AI",
+        "intro.interviewTooltip": "Want more context than a standard CV provides? Chat with my AI to dive deeper into my background and get further details on my experience. You can ask specific questions about past projects, explore my skills, and learn more about my responsibilities in previous roles.",
 
         // About section
         "about.heading": "About me",
@@ -170,6 +172,8 @@ export const ui = {
         "intro.downloadCV": "CV downloaden",
         "intro.linkedinLabel": "Link naar LinkedIn",
         "intro.githubLabel": "Link naar GitHub",
+        "intro.interviewMe": "Interview me met AI",
+        "intro.interviewTooltip": "Wil je meer context dan een standaard cv biedt? Chat met mijn AI om dieper in te gaan op mijn achtergrond en meer details te krijgen over mijn ervaring. Je kunt specifieke vragen stellen over eerdere projecten, mijn vaardigheden verkennen en meer te weten komen over mijn verantwoordelijkheden in eerdere functies.",
 
         // About section
         "about.heading": "Over mij",

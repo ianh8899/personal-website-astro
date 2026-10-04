@@ -85,10 +85,65 @@ html.dark {
   animation-delay: 0.175s;
 }
 
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes glow-spin {
+  from {
+    --glow-angle: 0deg;
+  }
+  to {
+    --glow-angle: 360deg;
+  }
+}
+
+.anim-glow-border {
+  position: relative;
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 9999px;
+  --glow-a: #f472b6;
+  --glow-b: #a78bfa;
+  --glow-gap: #f9fafb;
+}
+
+.anim-glow-border::before,
+.anim-glow-border::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--glow-angle),
+    var(--glow-a),
+    var(--glow-gap) 25%,
+    var(--glow-b) 50%,
+    var(--glow-gap) 75%,
+    var(--glow-a)
+  );
+  z-index: -1;
+  pointer-events: none;
+  animation: glow-spin 3.5s linear infinite;
+}
+
+.anim-glow-border::after {
+  z-index: -2;
+  filter: blur(12px);
+}
+
+html.dark .anim-glow-border {
+  --glow-gap: rgb(255 255 255 / 0.08);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .anim-fade-up,
   .anim-pop,
-  .anim-drop {
+  .anim-drop,
+  .anim-glow-border::before,
+  .anim-glow-border::after {
     animation: none;
   }
   html {
