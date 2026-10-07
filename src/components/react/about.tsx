@@ -10,7 +10,7 @@ export default function About() {
   return (
     <section
       ref={ref}
-      className="anim-fade-up anim-delay-175 mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
+      className="anim-fade-up anim-delay-175 mb-28 mt-16 max-sm:mt-20 max-w-[45rem] text-center leading-8 sm:mb-40 sm:mt-0 scroll-mt-28"
       id="about"
     >
       <SectionHeading>{t("about.heading")}</SectionHeading>
